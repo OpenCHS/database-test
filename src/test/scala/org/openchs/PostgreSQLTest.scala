@@ -38,9 +38,11 @@ class PostgreSQLTest extends FlatSpec with Matchers {
     val start: AtomicInteger = new AtomicInteger(1)
     val end: AtomicInteger = new AtomicInteger(10000)
     (1 to 100000).foreach(id => {
-      implicit val session = AutoSession
-      (start.get to end.get).par.map(sid => sql"INSERT INTO bulk_data VALUES(${sid}, ${id}, ${(sid % 1000) + 1}, ${Name.first_name})".update.apply())
-      session.close()
+      (start.get to end.get).par.map(sid => {
+        implicit val session = AutoSession
+        sql"INSERT INTO bulk_data VALUES(${sid}, ${id}, ${(sid % 1000) + 1}, ${Name.first_name})".update.apply()
+        session.close()
+      })
       start.getAndAdd(10000)
       end.getAndAdd(10000)
     })
