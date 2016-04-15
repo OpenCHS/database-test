@@ -10,11 +10,11 @@ import org.openchs.Helpers._
 class MongoFixtureCreation extends Mongo {
 
   "Insert all Data" should "Should populate database" in {
-        val providerCollection: MongoCollection[Document] = database.getCollection("providers")
-        providerCollection.bulkWrite((1 to 10000).par.map(id => InsertOneModel(Document("_id" -> id, "firstName" -> Name.first_name, "middleName" -> Name.first_name, "lastName" -> Name.last_name, "dateOfBirth" -> "2015-01-01"))).to[Seq]).results
+    val providerCollection: MongoCollection[Document] = database.getCollection("providers")
+    providerCollection.bulkWrite((1 to 10000).par.map(id => InsertOneModel(Document("_id" -> id, "firstName" -> Name.first_name, "middleName" -> Name.first_name, "lastName" -> Name.last_name, "dateOfBirth" -> "2015-01-01"))).to[Seq]).results
 
-        val facilitiesCollection: MongoCollection[Document] = database.getCollection("facilities")
-        facilitiesCollection.bulkWrite((1 to 10000).par.map(id => InsertOneModel(Document("_id" -> id, "name" -> Name.name))).to[Seq]).results
+    val facilitiesCollection: MongoCollection[Document] = database.getCollection("facilities")
+    facilitiesCollection.bulkWrite((1 to 10000).par.map(id => InsertOneModel(Document("_id" -> id, "name" -> Name.name))).to[Seq]).results
 
     val patientCollection: MongoCollection[Document] = database.getCollection("patients")
     val start: AtomicInteger = new AtomicInteger(1)
