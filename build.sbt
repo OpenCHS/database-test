@@ -14,5 +14,6 @@ libraryDependencies ++= Seq(
   "it.justwrote" %% "scala-faker" % "0.3",
   "org.scalikejdbc" %% "scalikejdbc" % "2.3.5",
   "ch.qos.logback" % "logback-classic" % "1.1.3",
-  "org.postgresql" % "postgresql" % "9.4.1208"
+  "org.postgresql" % "postgresql" % "9.4.1208",
+  "org.mongodb.scala" %% "mongo-scala-driver" % "1.0.0"
 )

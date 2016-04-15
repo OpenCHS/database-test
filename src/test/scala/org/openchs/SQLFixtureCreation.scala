@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicInteger
 import faker._
 import scalikejdbc._
 
-class FixtureCreation extends SQL {
+class SQLFixtureCreation extends SQL {
   "Insert all Data" should "Should populate database" in {
     (1 to 33000000).par.map(id => {
       implicit val session = AutoSession
