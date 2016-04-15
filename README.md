@@ -15,3 +15,11 @@ Selects with 3 left outer joins are also extremely fast.
 
 
 All of this on a Macbook with 16 gigs of Memory.
+
+#MongoDB
+With 33 Million patients, 10K Providers, 10K facilities, 33 Million Patients with Documents.
+The total space occupied by the database is `2867`MBs.
+
+With 10 concurrent threads firing `Inserts` into a table with primary key index and 2 foreign keys, each query takes 
+`0.00686919999999998` seconds and median time of `0.005`
+
