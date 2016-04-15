@@ -20,6 +20,6 @@ All of this on a Macbook with 16 gigs of Memory.
 With 33 Million patients, 10K Providers, 10K facilities, 33 Million Patients with Documents.
 The total space occupied by the database is `2867`MBs.
 
-With 10 concurrent threads firing `Inserts` into a table with primary key index and 2 foreign keys, each query takes 
+With 10 concurrent threads firing `Inserts` into, each insert takes 
 `0.00686919999999998` seconds and median time of `0.005`
 
